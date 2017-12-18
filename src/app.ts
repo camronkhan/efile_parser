@@ -1,7 +1,7 @@
 import * as express from 'express';
 
 class App {
-    public express;
+    public express: any;
 
     public constructor() {
         this.express = express();
@@ -10,7 +10,7 @@ class App {
 
     private mountRoutes(): void {
         const router = express.Router();
-        router.get('/', (req, res) => {
+        router.get('/', (req: any, res: any) => {
             res.json({
                 message: 'Hello world!'
             });

@@ -1,18 +1,31 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es2017",
         "module": "commonjs",
-        "outDir": "dist",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
         "sourceMap": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "*":[
+                "node_modules/*",
+                "src/types/*"
+            ]
+        },
+        "sourceRoot": "src",
+        "outDir": "dist"
     },
-    "files": [
-        "./node_modules/@types/node/index.d.ts"
+    "typeRoots": [
+        "node_modules/@types"
     ],
     "include": [
-        "src/**/*.ts"
+        "src/**/*"
     ],
     "exclude": [
-        "node_modules"
+        "dist",
+        "node_modules",
+        "tmp"
     ]
 }
