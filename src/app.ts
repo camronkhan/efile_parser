@@ -19,7 +19,7 @@ class App {
         router.get('/', (req: any, res: any) => res.json({ message: 'Hello world!' }));
         this.express.use('/', router);
 
-        router.post('/upload', this.parser.getUpload(), async (req: any, res: any) => {
+        router.post('/upload', this.parser.getUploadStorage(), async (req: any, res: any) => {
             try {
                 let content = await this.parser.getEndorsements(req.file.buffer);
                 res.json({ length: content.length, content: content });
